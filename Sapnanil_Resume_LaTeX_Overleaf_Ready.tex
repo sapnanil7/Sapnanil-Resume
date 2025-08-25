@@ -1,0 +1,105 @@
+% ======================
+% Sapnanil – One‑Page ATS‑Friendly LaTeX Resume
+% Drop this single .tex file into Overleaf and click Recompile.
+% Replace ALL CAPS placeholders with your info.
+% ======================
+
+\documentclass[11pt]{article}
+
+% ---------- Packages (all standard on Overleaf) ----------
+\usepackage[margin=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip} % nicer paragraph spacing, no indents
+\usepackage{tabularx}
+\usepackage{ifthen}
+
+% ---------- Fonts ----------
+% Overleaf's default Latin Modern is great for ATS; no custom fonts required.
+
+% ---------- Section formatting ----------
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+
+% ---------- Handy macros ----------
+\newcommand{\sep}{\,\textbar\,}
+\newcommand{\location}[1]{\hfill {\small #1}}
+\newcommand{\daterange}[1]{\hfill {\small #1}}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=2pt,parsep=0pt}
+
+% ---------- Header ----------
+\begin{document}
+\begin{center}
+    {\LARGE \textbf{SAPNANIL LASTNAME}}\\[4pt]
+    \href{mailto:YOUREMAIL@example.com}{YOUREMAIL@example.com} \sep +91-XXXXXXXXXX \sep KOLKATA, INDIA \\[-1pt]
+    \href{https://www.linkedin.com/in/YOUR-LINK}{linkedin.com/in/YOUR-LINK} \sep
+    \href{https://github.com/YOUR-USER}{github.com/YOUR-USER} \sep
+    \href{https://tryhackme.com/p/YOUR-USER}{tryhackme.com/p/YOUR-USER}
+\end{center}
+
+% ---------- Summary ----------
+\section*{Summary}
+Cybersecurity Engineer with 2+ years of experience in Identity \\
+\& Access Management (SailPoint IIQ, IdentityNow) and security automation.\\
+Designs scalable RBAC, builds policy-as-code and scripts (PowerShell/Python) to reduce toil, and partners with engineering to ship secure, reliable systems. Focus areas: AppSec, Cloud Security (Azure), IAM, and DevSecOps.
+
+% ---------- Skills ----------
+\section*{Skills}
+\textbf{Domains:} Application Security, Cloud Security (Azure), IAM, Threat Modeling, Secure SDLC\\
+\textbf{Tools:} Burp Suite, OWASP ZAP, Nmap, Wireshark, Git, Docker, Azure Security Center, Defender for Cloud\\
+\textbf{IAM:} SailPoint IIQ, IdentityNow (IDN), RBAC/ABAC, Access Reviews, Provisioning\\
+\textbf{Scripting:} PowerShell, Python, Bash \quad \textbf{CI/CD:} GitHub Actions, Azure DevOps\\
+\textbf{Standards:} OWASP ASVS, Top 10, CIS Benchmarks, NIST CSF\\
+\textbf{Other:} Linux, Networking, REST APIs, JSON/YAML
+
+% ---------- Experience ----------
+\section*{Experience}
+\textbf{EY (Ernst \\& Young)} \emph{IAM Cybersecurity Consultant} \location{Remote (India)} \daterange{\textit{Oct 2022 -- Present}}\\
+\begin{itemize}
+  \item Implemented SailPoint IIQ/IdentityNow rules, connectors, and lifecycle events; automated joiner–mover–leaver flows, reducing manual provisioning time by ~50\%.
+  \item Built PowerShell/Python scripts for bulk access remediation and access review evidence collection; cut weekly ops effort by 6–8 hours.
+  \item Designed role mining (RBAC) with least-privilege baselines; partnered with app owners to decompose entitlements and eliminate toxic combinations.
+  \item Authored runbooks and hardening guides; integrated IAM controls into CI/CD and change processes for auditability and repeatability.
+  \item Drove security testing with AppSec teams (Burp/ZAP), logging findings in trackers and validating fixes before prod rollouts.
+\end{itemize}
+
+% ---------- Projects ----------
+\section*{Selected Security Projects}
+\textbf{AppSec CI Pipeline Hardening} \daterange{2025}\\
+\begin{itemize}
+  \item Added SAST (CodeQL/Bandit) and dependency scanning (OWASP Dependency-Check) into GitHub Actions; enforced quality gates and created issue automation.
+\end{itemize}
+\textbf{Least-Privilege Access Reviews @ Scale} \daterange{2024}\\
+\begin{itemize}
+  \item Scripted export/normalize of entitlements from IIQ/IDN to CSV, mapped to business roles, and generated manager-friendly review packs; \~30\% faster cycles.
+\end{itemize}
+\textbf{Linux Hardening \\& Audit} \daterange{2023}\\
+\begin{itemize}
+  \item Authored Ansible/PowerShell baselines for CIS-aligned hardening; added checks for SSH, sudoers, logging, and patching cadence; improved audit scores.
+\end{itemize}
+
+% ---------- Certifications ----------
+\section*{Certifications}
+CompTIA Security+ (\emph{In progress, 2025}) \sep Microsoft AZ-500 (\emph{In progress, 2025}) \\ eJPT / ICCA (\emph{Planned})
+
+% ---------- Education ----------
+\section*{Education}
+\textbf{Bachelor of Technology (Computer Science)} \location{INDIA} \daterange{2018 -- 2022}\\
+GPA: 7.2/10
+
+% ---------- Achievements \\& Community ----------
+\section*{Achievements \\& Community}
+TryHackMe Premium (2025) \sep PowerShell automation projects on GitHub \sep Tech blogging/Medium (InfernoRadar)
+
+% ---------- Tailoring Notes (remove this block before exporting) ----------
+\section*{\footnotesize Notes for Tailoring (Delete Before Export)}
+\footnotesize
+\begin{itemize}
+  \item Keep it to one page. Prioritize recent, impact-focused bullets; start with strong verbs and quantify results.
+  \item Mirror job description keywords (e.g., "OWASP ASVS", "Azure Key Vault", "KMS", "SailPoint connector dev").
+  \item Maintain different variants by commenting sections with % and using Git branches per target role.
+\end{itemize}
+
+\end{document}
